@@ -1,0 +1,32 @@
+--Create a store database 
+
+CREATE TABLE bedoya (id INTEGER PRIMARY KEY, name TEXT, price INTEGER, asile INTEGER, quanity INTEGER);
+
+INSERT INTO bedoya VALUES(1, 'steak', 10, 6, 1);
+INSERT INTO bedoya VALUES(2, 'chicken', 8, 6, 1);
+INSERT INTO bedoya VALUES(3, 'turkey', 7, 6, 2);
+INSERT INTO bedoya VALUES(4, 'pork', 10, 6, 3);
+INSERT INTO bedoya VALUES(5, 'ham', 5, 6, 2);
+INSERT INTO bedoya VALUES(6, 'salmon', 10, 5, 1);
+INSERT INTO bedoya VALUES(7, 'tuna', 3, 5, 4);
+INSERT INTO bedoya VALUES(8, 'clams', 10, 5, 2);
+INSERT INTO bedoya VALUES(9, 'cod', 8, 5, 2);
+INSERT INTO bedoya VALUES(10, 'shrimp', 8, 5, 3);
+INSERT INTO bedoya VALUES(11, 'octo', 8, 5, 2);
+INSERT INTO bedoya VALUES(12, 'scallops', 9, 5, 2);
+INSERT INTO bedoya VALUES(13, 'bass', 8, 5, 1);
+INSERT INTO bedoya VALUES(14, 'bacon', 5, 6, 3);
+INSERT INTO bedoya VALUES(15, 'eggs', 4, 6, 12);
+
+--display the database by highest to lowest price.
+SELECT * FROM bedoya
+ORDER BY price desc;
+
+--what is the total price of items in asiles
+SELECT asile, SUM(price) FROM bedoya GROUP BY asile;
+
+--what are the 3 highest quanity items? 
+SELECT name, quanity, price FROM bedoya 
+ORDER BY quanity desc
+LIMIT 3;
+
